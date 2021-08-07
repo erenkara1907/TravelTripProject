@@ -1,0 +1,27 @@
+﻿@model TravelTripProjectUI.Models.Classes.Comment
+
+@{
+    ViewBag.Title = "EditComment";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Yorum Güncelleme Sayfası</h2>
+<br />
+
+@using (Html.BeginForm("EditComment", "Admin", FormMethod.Post))
+{
+    @Html.HiddenFor(x => x.ID)
+
+    @Html.Label("Başlık")
+    @Html.TextBoxFor(x => x.UserName, new { @class = "form-control" })
+    <br />
+    @Html.Label("Tarih")
+    @Html.TextBoxFor(x => x.Mail, new { @class = "form-control" })
+    <br />
+    @Html.Label("Blog Fotoğrafı")
+    @Html.TextAreaFor(x => x.Commentss, 15, 1, new { @class = "form-control" })
+    <br />
+
+    <button class="btn btn-success">Yorum Güncelle</button>
+}
+

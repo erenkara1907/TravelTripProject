@@ -1,0 +1,21 @@
+﻿@using TravelTripProjectUI.Models.Classes
+@model List<Blog>
+
+<div class="padding1">
+    <h4>En Beğendiğim Yerler</h4>
+    <div class="box-left">
+        @foreach (var item in Model)
+        {
+            <div class="bot-img">
+                <a href="/Blog/BlogDetail/@item.ID"><img src="@item.BlogImage" alt="" style="width:300px; height:75px;" /></a>
+            </div>
+            <div class="bot-desc">
+                <p>@item.Description.Substring(0, 90)...</p>
+            </div>
+            <div class="clear"></div>
+            <br />
+        }
+    </div>
+    @Html.Action("Partial5", "Default")
+
+</div>

@@ -1,0 +1,35 @@
+﻿@using TravelTripProjectUI.Models.Classes
+@model List<Comment>
+
+@{
+    ViewBag.Title = "CommentList";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Yorum Listesi</h2>
+<br />
+
+<table class="table table-bordered">
+    <tr>
+        <th class="text-center">#</th>
+        <th class="text-center">Kullanıcı</th>
+        <th class="text-center">Mail</th>
+        <th class="text-center">Yorum</th>
+        <th class="text-center">Blog</th>
+        <th class="text-center">Sil</th>
+        <th class="text-center">Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td class="text-center">@item.ID</td>
+            <td class="text-center">@item.UserName</td>
+            <td class="text-center">@item.Mail</td>
+            <td class="text-center">@item.Commentss</td>
+            <td class="text-center">@item.Blog.Heading</td>
+            <td><a href="/Admin/DeleteComment/@item.ID" class="btn btn-danger center-block" style="padding:20px; font-size:16px; font-weight:bold;">Sil</a></td>
+            <td><a href="/Admin/EditComment/@item.ID" class="btn btn-warning center-block" style="padding: 20px; font-size: 16px; font-weight: bold;">Güncelle</a></td>
+        </tr>
+    }
+</table>
+

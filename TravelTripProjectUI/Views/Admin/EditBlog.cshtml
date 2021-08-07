@@ -1,0 +1,29 @@
+﻿@model TravelTripProjectUI.Models.Classes.Blog
+
+@{
+    ViewBag.Title = "EditBlog";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Blog Güncelleme Sayfası</h2>
+<br />
+
+@using (Html.BeginForm("EditBlog", "Admin", FormMethod.Post))
+{
+    @Html.HiddenFor(x => x.ID)
+
+    @Html.Label("Başlık")
+    @Html.TextBoxFor(x => x.Heading, new { @class = "form-control" })
+    <br />
+    @Html.Label("Tarih")
+    @Html.TextBoxFor(x => x.Date, new { @class = "form-control" })
+    <br />
+    @Html.Label("Blog Fotoğrafı")
+    @Html.TextBoxFor(x => x.BlogImage, new { @class = "form-control" })
+    <br />
+    @Html.Label("Açıklama")
+    @Html.TextAreaFor(x => x.Description, 15, 1, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success">Blog Güncelle</button>
+}
+

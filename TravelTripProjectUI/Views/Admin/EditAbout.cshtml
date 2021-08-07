@@ -1,0 +1,23 @@
+﻿@model TravelTripProjectUI.Models.Classes.About
+
+@{
+    ViewBag.Title = "EditAbout";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Hakkımda Güncelleme Sayfası</h2>
+<br />
+
+@using (Html.BeginForm("EditAbout", "Admin", FormMethod.Post))
+{
+    @Html.HiddenFor(x => x.ID)
+
+    @Html.Label("Açıklama")
+    @Html.TextBoxFor(x => x.Description, new { @class = "form-control" })
+    <br />
+    @Html.Label("Fotoğraf")
+    @Html.TextBoxFor(x => x.PhotoUrl, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success">Hakkımda Güncelle</button>
+}
+
